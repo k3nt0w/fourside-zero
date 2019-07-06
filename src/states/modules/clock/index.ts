@@ -8,9 +8,9 @@ export {
   Actions,
   initialState,
   State,
-  ActionTypes as UserActionTypes,
-  actions as userActions,
-  operations as userOperations,
-  selectors as userSelectors
+  ActionTypes as ClockActionTypes,
+  actions as clockActions,
+  operations as clockOperations,
+  selectors as clockSelectors
 }
 export default reducer

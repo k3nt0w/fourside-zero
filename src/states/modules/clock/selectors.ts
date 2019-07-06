@@ -9,6 +9,18 @@ const getCount = createSelector(
   (state: State): number => state.count
 )
 
+const getLastUpdate = createSelector(
+  clockSelector,
+  (state: State): number => state.lastUpdate
+)
+
+const getLight = createSelector(
+  clockSelector,
+  (state: State): boolean => state.light
+)
+
 export const selectors = {
-  getCount
+  getCount,
+  getLastUpdate,
+  getLight
 }
