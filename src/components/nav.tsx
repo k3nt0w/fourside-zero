@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 const links = [
   { href: 'https://github.com/segmentio/create-next-app', label: 'Github' }
-].map(link => {
+].map((link: any) => {
   link.key = `nav-link-${link.href}-${link.label}`
   return link
 })
