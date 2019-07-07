@@ -10,6 +10,7 @@
 /build
 /dist
 /.next
+/src/server/**.js
 
 # misc
 .DS_Store
@@ -20,3 +21,7 @@ yarn-error.log*
 
 # ndenv
 .node-version
+
+# credentials
+credentials/*.js
+credentials/*.json
