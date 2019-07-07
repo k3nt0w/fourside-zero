@@ -1,0 +1,4 @@
+{
+  "watch": ["src/server/**/*.ts", "next.config.js"],
+  "exec": "tsc src/server/index.ts && node src/server/index.js"
+}
