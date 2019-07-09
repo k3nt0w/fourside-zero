@@ -3,10 +3,13 @@ import 'firebase/auth'
 import 'firebase/firestore'
 import clientCredential from '../../../credentials/client'
 
-firebase.initializeApp(clientCredential)
+const app = !firebase.apps.length
+  ? firebase.initializeApp(clientCredential)
+  : firebase.app()
 
-const auth = firebase.auth()
+const auth = app.auth()
 const googleAuthProvider = new firebase.auth.GoogleAuthProvider()
-const db = firebase.firestore()
+
+const db = app.firestore()
 
 export { auth, db, googleAuthProvider }
