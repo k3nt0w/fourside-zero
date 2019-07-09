@@ -1,7 +1,7 @@
 {
   "name": "create-next-example-app",
   "scripts": {
-    "watch:server": "nodemon src/server/index.ts",
+    "watch": "nodemon src/server/index.ts",
     "dev": "next",
     "build": "next build",
     "start": "next start"
