@@ -1,9 +1,6 @@
 import React, { Component } from 'react'
-import firebase from 'firebase/app'
-import 'firebase/auth'
-import 'firebase/firestore'
 import 'isomorphic-unfetch'
-import clientCredential from '../../credentials/client'
+import { auth, googleAuthProvider } from '../lib/firebase/client'
 
 interface Props {
   user?: any
@@ -37,11 +34,8 @@ export default class Auth extends Component<Props> {
   }
 
   componentDidMount(this: any) {
-    firebase.initializeApp(clientCredential)
-
     // if (this.state.user) this.addDbListener()
-
-    firebase.auth().onAuthStateChanged((user: any) => {
+    auth.onAuthStateChanged((user: any) => {
       if (user) {
         this.setState({ user: user })
         return user.getIdToken().then((token: any) => {
@@ -120,11 +114,11 @@ export default class Auth extends Component<Props> {
   }
 
   handleLogin() {
-    firebase.auth().signInWithPopup(new firebase.auth.GoogleAuthProvider())
+    auth.signInWithPopup(googleAuthProvider)
   }
 
   handleLogout() {
-    firebase.auth().signOut()
+    auth.signOut()
   }
 
   render(this: any) {
