@@ -4,6 +4,7 @@ import { NextContext, NextComponentType } from 'next'
 import App, { Container, NextAppContext } from 'next/app'
 import withRedux from 'next-redux-wrapper'
 import initializeStore from '../src/states/store'
+import Auth from '../src/components/auth'
 
 interface Props {
   Component: NextComponentType<
@@ -30,6 +31,7 @@ class MyApp extends App<Props> {
       <Container>
         <Provider store={store}>
           <Component {...pageProps} />
+          <Auth />
         </Provider>
       </Container>
     )
